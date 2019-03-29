@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-Python入门笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/28/Python入门笔记/" class="article-date">
+  <time datetime="2019-03-28T11:55:55.000Z" itemprop="datePublished">2019-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/Python入门笔记/">Python 入门笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#1、模块</p>
+<p>##import 语句</p>
+<pre><code>1 
+2 ##引入新的库
+3 import turtle  #直接引用
+4 import tensorflow as tf # 引入tensorflow 但改名为tf
+5 from time import time, localtime # 引入想要的功能
+6 from time import *  # 引入库的所有功能
+7 from datetime import datetime as d  #从datetime引入功能datetime ，改名为d
+</code></pre><p>#2、输入<br>    1 a = input(‘What’s your name:’)<br>    2 score = int(input(‘What’s your phone number:’))</p>
+<p>#3、输出<br>    1 print(“Hello guys”) #基本输出<br>    2 ##占位符<br>    3 print(“My name is %s”%(“Aviad”))#打印字符串<br>    4 print(“I am %d years old”%(20))#打印整数<br>    5 print(“I have %f dollars”%(66.6))<br>    6<br>    7 # format 占位符 {}<br>    8 print(‘Hello, {0}, 成绩提升了 {1:.1f}%’.format(‘小明’,17.125))</p>
+<p>#4、注释<br>    1 语句注释直接用#<br>    2 段落注释’’’  ‘’’</p>
+<p>#5、列表</p>
+<p>##5.1 列表的特点<br>    1 在Python中列表中的元素类型可以不一致<br>    2 正是因为列表中元素类型可以不一致，所以Python中的列表可以嵌套使用<br>    3 列表中每个元素都有下标，可以通过下标来获取对应的元素，并且下标以0开始，即第一个元素的下标为0<br>    4 初始化声明一个列表的时候，元素之间用逗号隔开，并且可以以逗号结尾，也可以以元素结尾<br>    5 列表中的元素可以修改（这个很重要，因为元组里面的元素是不可以修改的，这是重要区别之一）<br>    6 列表长度可以增加或者减少</p>
+<p>##5.2 列表初始化<br>    1 list1 = [‘大一’, ‘大二’, ‘666’, ‘moon’]  #类型可不同<br>    2 list2 = [‘老安’,’老李’,[‘老王’,’老黄’]]  #列表可嵌套<br>    3 list3 = [‘acc’,’EDG’,]  #初始化的时候，也可以以逗号结尾</p>
+<p>##5.3 列表基本操作</p>
+<pre><code>#列表初始化
+list1 = [&apos;一年级&apos;,&apos;二年级&apos;,123,456]
+
+#列表中的元素通过下标使用
+print(&apos;first item is : &apos;,list1[0])    #python列表下标依旧是从0开始
+
+#通过下标对元素进行赋值操作
+list1[1] = &apos;初一&apos;
+print(&apos;After set value,the value is : &apos;,list1[1])
+
+#使用del删除列表执行元素
+print(&apos;Before Del : &apos;,list1)
+del list1[0]    #删除第一个元素
+print(&apos;After Del : &apos;,list1)
+&apos;&apos;&apos;
+效果为:
+    Before Del :  [&apos;一年级&apos;, &apos;初一&apos;, 123, 456]
+    After Del :  [&apos;初一&apos;, 123, 456]
+&apos;&apos;&apos;
+
+#获取列表长度
+len = len(list1)
+print(&apos;len of list1 is : &apos;,len)
+
+#获取列表中最大的元素  max(listName)
+#注意：使用max函数时列表中的元素必须全部是数字,只要数字之间能转换，则可以使用该方法
+list2 = [1,2,3,4,1.2]    #有整数和浮点数
+print(&apos;max of list2 is : &apos;,max(list2))
+
+#获取列表中最小的元素 min(listName)
+#用法和限制同 max(listName)
+print(&apos;min of list2 is : &apos;,min(list2))
+</code></pre><p>##5.4 通过 ‘+’ 连接两个列表和使用 ‘*’叠加列表</p>
+<p>###5.4.1 ‘+’<br>    1 list1 = [1, 2]<br>    2 list2 = [3, 4, 5]<br>    3 print(list1 + list2)<br>    4 输出为：[1, 2, 3, 4, 5]</p>
+<p>###5.4.2 ‘<em>‘<br>    1 list1 = [1, 2]<br>    2 print(list1 </em> 2)<br>    2 输出为：[1,2,1,2]</p>
+<p>##5.5 Python提供的列表工具箱<br>    1 list.append(obj)</p>
+<pre><code>    #在列表末尾添加新的对象
+2 list.count(obj)
+    #统计某个元素在列表中出现的次数
+3 list.extend(seq)
+    #在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）
+4 list.index(obj)
+    #从列表中找出某个值第一个匹配项的索引位置
+5 list.insert(index, obj)
+    #将对象插入到列表中指定的位置
+6 list.pop([index=-1])
+    #移除列表中的一个元素（默认最后一个元素），并且返回该元素的值
+7 list.remove(obj)
+    #移除列表中某个值的第一个匹配项
+8 list.reverse()
+    #反向列表中元素
+9 list.sort(cmp=None, key=None, reverse=False)
+    #对原列表进行排序
+10 list.clear()
+    #清空列表
+11 list.copy()
+    #复制列表 (这里声明一下，使用copy方法得到的列表和使用 *1 得到的结果是一样的)
+</code></pre><p>##5.6 列表操作之切片</p>
+<pre><code>#在Python中对于具有序列结构的数据来说都可以使用切片操作，需注意的是序列对象某个索引位置返回的是一个元素，而切片操作返回是和被切片对象相同类型对象的副本。通常一个切片操作要提供三个参数 [start_index:  stop_index:  step], start_index是切片的起始位置stop_index是切片的结束位（不包括), step可以不提供，默认值是1，步长值不能为0，不然会报错ValueError。
+1 #举例
+2 &gt;&gt;&gt;list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+&gt;&gt;&gt;list[1:5]
+[1, 2, 3, 4, 5]
+3 &gt;&gt;&gt;list[-8:6]
+[2, 3, 4, 5]
+</code></pre><p>##5.7 元组</p>
+<pre><code>#在python中，列表中的元素是可以修改的，但有时候你需要创建一些不可修改的元素，这时候，元组就闪亮登场了。元组看起来像是列表，但使用圆括号而不是方括号标识，元组中的元素不可修改，但后续如有需求要更改，只能重新定义元组
+#例子：
+dimensions = (200,50)
+print(&quot;Original dimensions:&quot;)
+for dimension in dimensions:
+    print(dimendion)
+dimensions = (400,5000)
+print(&quot;\nModified dimensions:&quot;)
+for dimension in dimensions:
+    print(dimendion)
+&apos;&apos;&apos;
+输出为：
+Original dimensions:
+200
+50
+
+Modified dimensions:
+400
+5000
+&apos;&apos;&apos;
+</code></pre><p>#6、条件语句<br>    age = input(“input your age\n”)<br>    if int(age) &gt; 18:<br>        print(“already 成年”)<br>    elif int(age) &gt; 30:<br>        print(“30 more”)<br>    else:<br>        print(‘&lt;18’)<br>    print(‘out of if else ‘)</p>
+<pre><code>&apos;&apos;&apos;
+运行结果
+input your age
+    &apos;随手一输&apos; 
+60
+    &apos;输出为&apos;
+already 成年
+out of if else
+</code></pre><p>#7、循环语句</p>
+<pre><code>#示例1      1~100的求和
+n = 100
+sum = 0
+counter = 1
+while counter &lt;= n:
+    sum = sum + counter
+    counter += 1
+print(&quot;1 到 %d 之和为: %d&quot; % (n, sum))
+
+#示例2     continue语句被用来告诉Python跳过当前循环块中的剩余语句，然后继续进行下一轮循环
+for letter in &apos;Runoob&apos;:
+if letter == &apos;o&apos;:  # 字母为 o 时跳过输出
+    continue
+print(&apos;当前字母 :&apos;, letter)
+
+#pass占位符-也就相当于图书馆座位上扔了一本书的性质  如果定义一个函数却没想好怎么写函数体，那就可以使用pass占位符 这样就不会报错
+for letter in &apos;Runoob&apos;:
+if letter == &apos;o&apos;:
+    pass
+    print(&apos;执行 pass 块&apos;)
+print(&apos;当前字母 :&apos;, letter)
+
+print(&quot;Good bye!&quot;)
+
+&apos;&apos;&apos;
+效果为：
+当前字母 : R
+当前字母 : u
+当前字母 : n
+执行 pass 块
+当前字母 : o
+执行 pass 块
+当前字母 : o
+当前字母 : b
+Good bye!
+&apos;&apos;&apos;
+</code></pre><p>#8、字典</p>
+<pre><code># 字典是一个无序的，可以修改的，元素呈键值对的形式，以逗号分割的，以大括号包围的序列；字典是python基础数据类型当中唯一一个映射关系的数据类型；由于字典无序，所以我们定义字典和字典生成之后的元素的顺序是不同的。
+#常用操作
+![](https://i.imgur.com/FyPgH4q.png)
+![](https://i.imgur.com/JCvUtNW.png)
+</code></pre><p>#9、函数</p>
+<pre><code>#函数的定义一定要放在调用之前，否则会报错
+函数体定义
+def Monster(dragon):
+print(dragon)
+def hi(yourname, num):
+print(yourname,num)
+#默认参数
+#函数声明只需要在需要默认参数的地方用 = 号给定即可, 但是要注意所有的默认参数都不能出现在非默认参数的前面
+def function_name(price, color=&apos;red&apos;, brand=&apos;carmy&apos;, is_second_hand=True):
+    print(&apos;price&apos;, price,
+          &apos;color&apos;, color,
+          &apos;brand&apos;, brand,
+          &apos;is_second_hand&apos;, is_second_hand, )
+function_name(&quot;这是自定义函数的定义输出&quot;)
+</code></pre><p>#10、类</p>
+<pre><code>#说到类，就不得不说下python的面向对象。首先，面向对象是一种抽象，是一种用分类的眼光看待事物的方法。抽象能大大减轻我们解决现实问题的难度
+#面向对象有两个基本概念-类和对象，对象呢，是类的实例
+#举例：写这种类型博客的一般都是程序猿，程序猿就是指的我们这一类人，而这篇博客的作者，也就是我，又是这类人中的一个个体，所以呢，我就是这个类的一个实例对象
+#面向对象的基本要素-类的属性和方法
+#举例：程序猿这个类，包含了一些属性，比如年龄，性别，身高等。同时这个类里面还包含一些功能，比如说写代码，修电脑等
+#封装性    比如说，程序猿能修电脑，外人的话，也只是知道程序猿有修电脑这个功能，但不知道实际上是怎，这就是封装性
+</code></pre><p>#11、列表解析</p>
+<pre><code>#列表解析是Python迭代机制的一种应用，与for循环一起使用它常用于实现创建新的列表，因此用在[]中。
+例子：
+1    
+even = [x**3 for x in range(1,10) if X%2 == 0]
+print(even)
+#result: [8, 64, 216, 512]
+2    构建一个x+y的连接
+lst = [x+y for x in ‘abc’ for y in ‘def’]
+print(lst)
+#result:[&apos;ad&apos;, &apos;ae&apos;, &apos;af&apos;, &apos;bd&apos;, &apos;be&apos;, &apos;bf&apos;, &apos;cd&apos;, &apos;ce&apos;, &apos;cf&apos;]
+3
+要求：列出1~10中大于等于4的数字的平方
+普通方法：
+L = []
+for i in range(1,11):
+   if i &gt;= 4:
+       L.append(i**2)
+print(L)
+#result:[16, 25, 36, 49, 64, 81, 100]
+列表解析
+L = [ i**2 for i in range(1,11) if i &gt;= 4 ]    后缀一个if条件语句  附带条件
+print(L)
+[16, 25, 36, 49, 64, 81, 100]
+</code></pre><p>#12、正则表达式</p>
+<p>##12.1<br>    re.match与re.search的区别<br>    re.match只匹配字符串的开始，如果字符串开始不符合正则表达式，则匹配失败，函数返回None；而re.search匹配整个字符串，直到找到一个匹配。</p>
+<pre><code>import re
+line = &quot;Cats are smarter than dogs&quot;;
+matchObj = re.match( r&apos;dogs&apos;, line, re.M|re.I)
+if matchObj:
+   print (&quot;match --&gt; matchObj.group() : &quot;, matchObj.group())
+else:
+   print (&quot;No match!!&quot;)    
+matchObj = re.search( r&apos;dogs&apos;, line, re.M|re.I)
+if matchObj:
+   print (&quot;search --&gt; matchObj.group() : &quot;, matchObj.group())
+else:
+   print (&quot;No match!!&quot;)
+
+#No match!!
+#search --&gt; matchObj.group() :  dogs
+</code></pre><p>##12.2检索和替换<br>    import re</p>
+<pre><code>phone = &quot;2004-959-559 # 这是一个电话号码&quot;
+
+# 删除注释
+num = re.sub(r&apos;#.*$&apos;, &quot;&quot;, phone)
+print (&quot;电话号码 : &quot;, num)
+
+# 移除非数字的内容
+num = re.sub(r&apos;\D&apos;, &quot;&quot;, phone)
+print (&quot;电话号码 : &quot;, num)
+
+#电话号码 :  2004-959-559 
+#电话号码 :  2004959559
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/28/Python入门笔记/" data-id="cjttytazw0001bkhz22pvxdo9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/03/28/hello-world/" class="article-date">
+  <time datetime="2019-03-28T11:25:22.417Z" itemprop="datePublished">2019-03-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/03/28/hello-world/">Hello World</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/03/28/hello-world/" data-id="cjttytazs0000bkhz4ejp26q9" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/03/28/Python入门笔记/">Python 入门笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/03/28/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>
